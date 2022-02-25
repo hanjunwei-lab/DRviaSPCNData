@@ -1,0 +1,11 @@
+##' @title An object of class environment including some essential data
+##' @description An object of class environment including some essential data.
+##' @details (1)"DrugSPCentralMatrix": We used the random walk algorithm to estimate the eigenvector centrality of subpathways induced by each drug. The "DrugCentralMatrix" is a matrix which the rows is subpathways and columns is drugs. Values in the matrix is eigenvector centrality of subpathways induced by each drug.
+##' (2)"DrugSPESMatrix": The GSEA method was applied to the gene expression profile of each drug to get subpathways enrichment score. The "DrugEscoreMatrix" is a matrix which the rows is subpathways and columns is drugs. Values in the matrix is enrichment score of subpathways.
+##' (3)"DrugSPESCMatrix": We used the random walk algorithm to estimate the eigenvector centrality of subpathways induced by each drug. And the enrichment score of subpathways were weighted by corresponding eigenvector centrality to get weighted enrichment score. The "DrugPscoreMatrix" is a matrix which the rows is subpathways and columns is drugs. Values in the matrix is weighted enrichment score of subpathways.
+##' (4)"DrugSPPvalueMatrix": we used the bootstrap resampling method to calculate the statistical significance of eigenvector centrality of subpathways. The "DrugPvalueMatrix" is a matrix which the rows is subpathways and columns is drugs. Values in the matrix is p-value of eigenvector centrality of subpathways.
+##' (5)"GO_BP": We downloaded GO biological process data from MSigDB. The go terms with more than 5 genes or less than 100 genes are selected.
+##' (6)"Subpathways": Subpathways data from SubpathwayMiner method.
+##' (7)"GSE65194expr": Gene expression profile from GSE65194.
+##' (8)"label": A character vector consist of "0" and "1" which represent normal and disease sample in gene expression profile.
+"envData_sp"

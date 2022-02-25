@@ -1,0 +1,13 @@
+Package: DRviaSPCNData
+Type: Package
+Title: Data Sets for the DRviaSPCN Package
+Version: 0.1.0
+Author: Jiashuo Wu, Junwei Han
+Maintainer: Junwei Han <hanjunwei1981@163.com>
+Description: This package provides gene expression profile (GSE65194), sample label, centrality score, enrichment score, weighted enrichment score and p-value of eigenvector centrality of subpathways regulated by all drugs to support the DRviaSPCN package. The subpathways data and GO terms of Biological Process are also provided to researchers for future research. These data are stored in an object of class environment named "envData_sp" and users can achieve these data through function "GetData".
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 3.6)
