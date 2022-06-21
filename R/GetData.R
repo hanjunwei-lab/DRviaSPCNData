@@ -1,6 +1,6 @@
 #' @title Get essential data
 #' @description This function is used to achieve essential data.
-#' @param exampleData A character, should be one of "DrugSPCentralMatrix", "DrugSPESMatrix", "DrugSPESCMatrix", "DrugSPPvalueMatrix", "GO_SP", "Subpathways", "GSE65194expr" and "label".
+#' @param exampleData A character, should be one of "DrugSPCentralMatrix", "DrugSPESMatrix", "DrugSPESCMatrix", "DrugSPPvalueMatrix", "GO_BP", "Subpathways", "GSE65194expr" and "label".
 #' @return Data
 #' @usage GetData(exampleData)
 #' @export
