@@ -7,7 +7,7 @@
 GetData(exampleData)
 }
 \arguments{
-\item{exampleData}{A character, should be one of "DrugSPCentralMatrix", "DrugSPESMatrix", "DrugSPESCMatrix", "DrugSPPvalueMatrix", "GO_SP", "Subpathways", "GSE65194expr" and "label".}
+\item{exampleData}{A character, should be one of "DrugSPCentralMatrix", "DrugSPESMatrix", "DrugSPESCMatrix", "DrugSPPvalueMatrix", "GO_BP", "Subpathways", "GSE65194expr" and "label".}
 }
 \value{
 Data
