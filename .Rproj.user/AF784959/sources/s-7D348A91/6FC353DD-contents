@@ -1,0 +1,31 @@
+DE2SubPathresult<-DE2SubPath(inexpData=a65194,Label=label65194,nperm=1000)
+SubPathscore<-getSubpathscore(DE2SubPathresult=DE2SubPathresult,inexpData=a65194,Label=label65194)
+Opdrugresult<-optimaldrugs(SubPathscore=SubPathscore,Drug_Pscore_matrix=a,
+                           nperm=1000,topcut=10,pcut=0.01,weight=FALSE)
+Disease2SPWheatmap(DE2SubPathresult,exp=a65194,Label=label65194,pcut=0.05,bk=c(-2,2),
+                   cluster.rows=FALSE,cluster.cols=FALSE,show.rownames=TRUE,
+                   show.colnames=FALSE,col=c("navy","firebrick3"),
+                   cell.width=NA,cell.height=NA,scale="row",fontsize=7,
+                   fontsize.row=9,fontsize.col=10)
+heatmap.list<-Drug2SPWheatmap(drugname = "doxorubicin",
+                              Drug_Pvalue_matrix=d,
+                              exp=a65194,Label=label65194,pcut=0.05,bk=c(-2,2),
+                              cluster.rows=FALSE,cluster.cols=FALSE,show.rownames=TRUE,
+                              show.colnames=FALSE,col=c("navy","firebrick3"),
+                              cell.width=NA,cell.height=NA,scale="row",fontsize=7,
+                              fontsize.row=9,fontsize.col=10)
+library(pROC)
+Opdrugresult $type<-rep(0,length(Opdrugresult [,1]))
+Opdrugresult [which(Opdrugresult [,1]%in%brcadrug[,4]),'type']<-1
+Opdrugresult [which(Opdrugresult [,'type']!='1'),'type']<-0
+
+Opdrugresult <-Opdrugresult [order(Opdrugresult [,2]),]
+which(Opdrugresult[,5]==1)
+
+mael2 <- glm(Opdrugresult [,5]~Opdrugresult[,2], data=Opdrugresult , family='binomial')
+pre2 <- predict(mael2,type='response')
+# install.packages("pROC")
+maelroc <- roc(Opdrugresult[,5],pre2)
+plot(maelroc, print.auc=TRUE, auc.polygon=TRUE, grid=c(0.1, 0.2),
+     grid.col=c("green", "red"), mahxd.auc.polygon=TRUE,
+     auc.polygon.col="skyblue", print.thres=TRUE, main="CTSD")

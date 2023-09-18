@@ -5,7 +5,7 @@
 \alias{envData_sp}
 \title{An object of class environment including some essential data}
 \format{
-An object of class \code{environment} of length 8.
+An object of class \code{environment} of length 9.
 }
 \usage{
 envData_sp

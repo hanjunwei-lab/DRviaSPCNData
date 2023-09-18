@@ -10,9 +10,6 @@ GetData<-function(exampleData){
   if(!exists("envData_sp")) {
     utils::data("envData_sp",package="DRviaSPCNData")
   }
-  if(!exists("envData_sdf")) {
-    utils::data("envData_sdf",package="DRviaSPCNData")
-  }
   if (exampleData=="DrugSPCentralMatrix")
   {
     dataset<- get("DrugSPCentralMatrix",envir=envData_sp)
@@ -55,7 +52,7 @@ GetData<-function(exampleData){
   }
   if (exampleData=="sdfSET")
   {
-    dataset<- get("sdfSET",envir=envData_sdf)
+    dataset<- get("sdfSET",envir=envData_sp)
     return(dataset)
   }
 }

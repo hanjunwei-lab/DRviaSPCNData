@@ -1,0 +1,39 @@
+name<-names(alldrug_list_jbj)
+
+name1<-c()
+for (i in 1:3742) {
+  n<-unlist(strsplit(name[i],'_'))[[1]]
+  name1<-c(name1,n)
+}
+
+which(name1=='tretinoin')
+
+l<-alldrug_list_jbj[c(263,2222,3603,368,369,370,2991,2992,3697)]
+
+drugl<-list()
+for (i in 1:length(l)){
+  x<-MyPath(l[[i]],nperm=1000,
+            Subpathway=SubPathwayData,Go=Gosets_BP,
+            Jaccard=jaccardmatrix_BP_sub,Go_SubPath_gene=pa_gocogenes_BP_sub)
+  drugl[[i]]<-x
+}
+
+
+
+DrugPvalueMatrix<-matrix(NA,689,3724)
+for (i in 1:3724) {
+  n<-alldrug2subpathway3742[[i]]
+  n<-n[match(SubPathwayData[,1],n[,1]),]
+  DrugPvalueMatrix[,i]<-n[,6]
+}
+colnames(DrugPvalueMatrix)<-names(alldrug2subpathway3742)
+rownames(DrugPvalueMatrix)<-SubPathwayData[,1]
+
+envData$DrugPvalueMatrix<-DrugPvalueMatrix
+  
+  
+
+
+
+
+  

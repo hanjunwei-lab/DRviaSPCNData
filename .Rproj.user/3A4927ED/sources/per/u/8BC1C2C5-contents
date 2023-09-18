@@ -1,0 +1,18 @@
+devtools::document()
+
+
+usethis::use_data(envData_sp,compress = "xz",version = 3,overwrite = T)
+
+
+usethis::use_vignette("getSubpathscore")
+
+
+shell('R CMD Rd2pdf . --output=man/figures/manual.pdf --force --no-preview')
+
+
+devtools::check()
+
+Sys.which(Sys.getenv("R_QPDF", "qpdf"))
+
+usethis::use_vignette("Disease2Drug")
+

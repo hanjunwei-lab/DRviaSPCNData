@@ -1,0 +1,4 @@
+##' @title A list including two matrix
+##' @description "DrugPscoreMatrix" and "DrugPvalueMatrix" are pvalue and weighted enrichmentscore of subpathways regulated by all drugs.
+##' @usage data("envData_sp")
+"envData_sp"

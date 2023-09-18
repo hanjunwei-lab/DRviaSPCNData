@@ -1,0 +1,59 @@
+a<-Getlist("DrugPscoreMatrix")
+b<-Getlist("DrugPvalueMatrix")
+envData_sp$DrugPscoreMatrix<-Drug_Pscore_matrix3_1
+envData_sp$DrugEScoreMatrix<-Drug_ESscore_matrix
+
+names(alldrug2subpathway3742)<-names(drug2subpathway)
+save(alldrug2subpathway3742,file = 'alldrug2subpathway_p_3724.RData')
+
+alldrug2subpathway3742<-alldrug2subpathway3742[match(colnames(Drug_Pscore_matrix3_1),names(alldrug2subpathway3742))]
+
+sp<-rownames(Drug_ESscore_matrix)
+
+DrugPvalueMatrix<-matrix(NA,689,3724)
+
+for (i in 1:3724) {
+  d2sp<-alldrug2subpathway3742[[i]]
+  d2sp<-d2sp[match(sp,d2sp[,1]),]
+  pv<-d2sp[,6]
+  DrugPvalueMatrix[,i]<-pv 
+}
+colnames(DrugPvalueMatrix)<-colnames(Drug_ESscore_matrix)
+rownames(DrugPvalueMatrix)<-sp
+envData_sp$DrugPvalueMatrix<-DrugPvalueMatrix
+
+usethis::use_data(envData_sp,overwrite = T,compress = "xz")
+devtools::document()
+
+Drug_central_matrix<-round(Drug_central_matrix,5)
+DrugCentralMatrix<-Drug_central_matrix
+envData_sp$DrugCentralMatrix<-DrugCentralMatrix
+rm(DrugCentralMatrix,envir = envData_sp)
+a<-envData_sp$DrugPscoreMatrix
+b<-envData_sp$DrugEscoreMatrix
+DrugCentralMatrix<-DrugCentralMatrix[,match(colnames(a),colnames(DrugCentralMatrix))]
+
+a<-envData_sp$DrugPscoreMatrix
+b<-envData_sp$DrugEscoreMatrix
+c<-envData_sp$DrugCentralMatrix
+d<-envData_sp$DrugPvalueMatrix
+
+a<-round(a,3)
+b<-round(b,3)
+c<-round(c,3)
+d<-round(d,3)
+
+envData_sp$DrugPscoreMatrix<-a
+envData_sp$DrugEscoreMatrix<-b
+envData_sp$DrugCentralMatrix<-c
+envData_sp$DrugPvalueMatrix<-d
+
+rm(GEP,envir =envData_sp )
+envData_sp$DrugSPESCMatrix<-a
+envData_sp$DrugSPESMatrix<-b
+envData_sp$DrugSPCentralMatrix<-c
+envData_sp$DrugSPPvalueMatrix<-d
+envData_sp$GSE65194expr<-a65194
+envData_sp$label<-label65194
+
+

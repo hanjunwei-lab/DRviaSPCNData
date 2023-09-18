@@ -1,0 +1,28 @@
+{
+    "id": "3C57C011",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1645493153198.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "id": "ea8711f918ec44ff85f05742335a11f2",
+        "name": "envData_sp",
+        "title": "envData_sp",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1645493135,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1645493153198,
+    "read_only": false,
+    "read_only_alternatives": []
+}

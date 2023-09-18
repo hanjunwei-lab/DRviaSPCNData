@@ -1,0 +1,25 @@
+{
+    "id": "B5A43070",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1655793820393.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "id": "2fd78fb7625e4a6092ced9955e83870e",
+        "name": "envData_sp",
+        "title": "envData_sp"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1638692271,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1655793820393,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,11 @@
+usethis::use_data(envData_sdf,overwrite = TRUE,compress = "xz")
+
+devtools::document()
+
+envData_sp$sdfSET<-sdfSET
+rm(sdfSET,envir=envData_sp)
+library(DRviaSPCNData)
+a<-GetData("sdfSET")
+
+envData_sdf<-new.env()
+envData_sdf$sdfSET<-envData_sp$sdfSET
